@@ -28,9 +28,9 @@ void updateSymbolVal(char symbol, int val);
 
 line    : assignment   			                                {;}
 		| exit_cmd   				                            {exit(EXIT_SUCCESS);}
-		| ecrire OPEN_BRACKET exp CLOSE_BRACKET		        {printf("%d\n", $3);}
+		| ecrire OPEN_BRACKET exp CLOSE_BRACKET		            {printf("%d\n", $3);}
 		| line assignment   		                            {;}
-		| line ecrire OPEN_BRACKET exp  CLOSE_BRACKET 		{printf("%d\n", $4);}
+		| line ecrire OPEN_BRACKET exp  CLOSE_BRACKET 		    {printf("%d\n", $4);}
 		| line exit_cmd   	                                    {exit(EXIT_SUCCESS);}
         ;
 

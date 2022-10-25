@@ -1,5 +1,9 @@
 x = 1 + 2 + 5
 y = 1.2 / 4
-v = "hello"
+ecrire(1+2)
+ecrire(x, y)
 
-ecrire(x, y, v)
+v = "hello"
+b = v + " world"
+
+ecrire(v, b)
