@@ -1,0 +1,4 @@
+afficher "hello"
+
+x = 1 + 2 + 5
+afficher x
