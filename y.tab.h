@@ -51,15 +51,23 @@ extern int yydebug;
   {
     afficher = 258,
     exit_cmd = 259,
-    number = 260,
-    identifier = 261
+    OPEN_BRACKET = 260,
+    CLOSE_BRACKET = 261,
+    OPEN_SCOPE = 262,
+    CLOSE_SCOPE = 263,
+    number = 264,
+    identifier = 265
   };
 #endif
 /* Tokens.  */
 #define afficher 258
 #define exit_cmd 259
-#define number 260
-#define identifier 261
+#define OPEN_BRACKET 260
+#define CLOSE_BRACKET 261
+#define OPEN_SCOPE 262
+#define CLOSE_SCOPE 263
+#define number 264
+#define identifier 265
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -68,7 +76,7 @@ union YYSTYPE
 #line 12 "parser.y"
 int num; char id;
 
-#line 72 "y.tab.h"
+#line 80 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

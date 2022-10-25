@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+main() : entier {   
+  afficher("Bonjour tout le monde!")
+  return 0
+}
+
+main()

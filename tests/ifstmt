@@ -1,0 +1,6 @@
+si x > 1
+  afficher(x)
+sinon x === 1
+  afficher(1)
+alors
+  afficher("petit", x)

@@ -1,7 +1,7 @@
 %{
 void yyerror (char *s);
 int yylex();
-#include <stdio.h>     /* C declarations used in actions */
+#include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 int symbols[52];
@@ -9,12 +9,16 @@ int symbolVal(char symbol);
 void updateSymbolVal(char symbol, int val);
 %}
 
-%union {int num; char id;}         /* Yacc definitions */
+%union {int num; char id;}
 
 %start line
 %token afficher
 %token exit_cmd
 
+%token OPEN_BRACKET CLOSE_BRACKET
+%token OPEN_SCOPE CLOSE_SCOPE
+
+%token TYPE_STRING
 %token <num> number
 %token <id> identifier
 %type <num> line exp term 
@@ -22,12 +26,12 @@ void updateSymbolVal(char symbol, int val);
 
 %%
 
-line    : assignment   			{;}
-		| exit_cmd   				{exit(EXIT_SUCCESS);}
-		| afficher exp   					{printf("%d\n", $2);}
-		| line assignment   		{;}
-		| line afficher exp   			{printf("%d\n", $3);}
-		| line exit_cmd   	{exit(EXIT_SUCCESS);}
+line    : assignment   			                                {;}
+		| exit_cmd   				                            {exit(EXIT_SUCCESS);}
+		| afficher OPEN_BRACKET exp CLOSE_BRACKET		        {printf("%d\n", $3);}
+		| line assignment   		                            {;}
+		| line afficher OPEN_BRACKET exp  CLOSE_BRACKET 		{printf("%d\n", $4);}
+		| line exit_cmd   	                                    {exit(EXIT_SUCCESS);}
         ;
 
 assignment : identifier '=' exp  { updateSymbolVal($1,$3); }
