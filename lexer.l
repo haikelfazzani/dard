@@ -8,7 +8,7 @@ int yylex();
 %}
 
 %%
-"afficher"			    {return afficher;}
+"ecrire"			    {return ecrire;}
 "exit"				    {return exit_cmd;}
 
 "string"                return TYPE_STRING;

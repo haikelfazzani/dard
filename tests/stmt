@@ -1,3 +1,0 @@
-x = 1 + 2 + 5
-afficher(x)
-// afficher("hello")

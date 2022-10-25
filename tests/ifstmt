@@ -1,6 +1,6 @@
 si x > 1
-  afficher(x)
+  ecrire(x)
 sinon x === 1
-  afficher(1)
+  ecrire(1)
 alors
-  afficher("petit", x)
+  ecrire("petit", x)

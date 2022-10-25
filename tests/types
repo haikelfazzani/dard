@@ -1,0 +1,5 @@
+x = 1 + 2 + 5
+y = 1.2 / 4
+v = "hello"
+
+ecrire(x, y, v)

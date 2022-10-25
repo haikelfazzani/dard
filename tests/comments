@@ -1,0 +1,7 @@
+// ecrire("hello")
+/* comment */
+/*
+  comment
+*/
+
+ecrire(1) // comment
