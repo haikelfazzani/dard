@@ -1,0 +1,33 @@
+// Test programs for Dard interpreter
+
+// Example 1: Simple arithmetic operations
+let a = 5;
+let b = 10;
+let c = a + b;
+print(c); // Expect 15
+
+// Example 2: String concatenation
+let str1 = "Hello";
+let str2 = "World";
+let greeting = str1 + " " + str2;
+print(greeting); // Expect "Hello World"
+
+// Example 3: Conditional statement
+let x = 10;
+if (x > 5) {
+    print("x is greater than 5"); // Expect this to print
+} else {
+    print("x is not greater than 5");
+}
+
+// Example 4: Loop
+for (let i = 0; i < 5; i++) {
+    print(i); // Expect 0, 1, 2, 3, 4
+}
+
+// Example 5: Function Declaration and Invocation
+function add(a, b) {
+    return a + b;
+}
+let sum = add(3, 4);
+print(sum); // Expect 7
