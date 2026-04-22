@@ -1,0 +1,28 @@
+// Advanced test cases for multiplication, division, and modulo operators
+
+void test_multiplication() {
+    assert(multiply(2, 3) == 6);
+    assert(multiply(-2, 3) == -6);
+    assert(multiply(-2, -3) == 6);
+    assert(multiply(0, 3) == 0);
+    assert(multiply(2, 0) == 0);
+    assert(multiply(2, 3 + 4) == 14); // Nested operation
+}
+
+void test_division() {
+    assert(divide(6, 3) == 2);
+    assert(divide(-6, 3) == -2);
+    assert(divide(-6, -3) == 2);
+    assert(divide(0, 3) == 0);
+    assert(divide(3, 0) == Infinity); // Edge case: Division by zero
+    assert(divide(10, 2 + 3) == 2); // Nested operation
+}
+
+void test_modulo() {
+    assert(modulo(10, 3) == 1);
+    assert(modulo(-10, 3) == 2);
+    assert(modulo(10, -3) == -2);
+    assert(modulo(0, 3) == 0);
+    assert(modulo(3, 0) == Infinity); // Edge case: Modulo by zero
+    assert(modulo(10, 3 + 2) == 0); // Nested operation
+}
