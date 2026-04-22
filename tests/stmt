@@ -1,0 +1,52 @@
+# Comprehensive Test Suite for Dard Language Interpreter
+
+This file contains a suite of test cases designed to comprehensively evaluate the Dard language interpreter.
+
+## Test Cases
+
+1. **Basic Arithmetic**  
+   **Input:** `print(2 + 2)`  
+   **Expected Output:** `4`
+
+2. **String Concatenation**  
+   **Input:** `print("Hello " + "World")`  
+   **Expected Output:** `Hello World`
+
+3. **Variable Assignment**  
+   **Input:** `x = 5; print(x)`  
+   **Expected Output:** `5`
+
+4. **Function Definition and Call**  
+   **Input:** `def add(a, b) { return a + b; } print(add(3, 4))`  
+   **Expected Output:** `7`
+
+5. **Conditional Statement**  
+   **Input:** `if (3 < 5) { print("True") } else { print("False") }`  
+   **Expected Output:** `True`
+
+6. **Looping**  
+   **Input:** `for (i = 0; i < 5; i = i + 1) { print(i) }`  
+   **Expected Output:** `0
+1
+2
+3
+4`
+
+7. **List Handling**  
+   **Input:** `list = [1, 2, 3]; print(list[1])`  
+   **Expected Output:** `2`
+
+8. **Error Handling**  
+   **Input:** `print(5 / 0)`  
+   **Expected Output:** `Error: Division by zero`
+
+9. **Boolean Logic**  
+   **Input:** `print(true && false)`  
+   **Expected Output:** `false`
+
+10. **Nested Function Calls**  
+   **Input:** `def multiply(a, b) { return a * b; } def square(x) { return multiply(x, x); } print(square(4))`  
+   **Expected Output:** `16`
+
+## How to Run Tests  
+To run the tests, execute the interpreter with each test case input and compare the output with the expected result.
