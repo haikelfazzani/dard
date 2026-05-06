@@ -8,21 +8,74 @@ int yylex();
 %}
 
 %%
-"ecrire"			    {return ecrire;}
-"exit"				    {return exit_cmd;}
+"program"               {return PROGRAM;}
+"fin"                   {return FIN;}
+"ecrire"                {return WRITE;}
+"lire"                  {return READ;}
+"exit"                  {return EXIT_CMD;}
 
-"string"                return TYPE_STRING;
+"entier"                {return TYPE_INT;}
+"chaine"                {return TYPE_STRING;}
+"flottant"              {return TYPE_FLOAT;}
+"booleen"               {return TYPE_BOOL;}
+"tableau"               {return TYPE_ARRAY;}
 
-"(" 					{return OPEN_BRACKET;}
-")" 					{return CLOSE_BRACKET;}
+"si"                    {return IF;}
+"sinon"                 {return ELSE;}
+"finsi"                 {return ENDIF;}
 
-"{"                     {return OPEN_SCOPE;}
-"}"                     {return CLOSE_SCOPE;}
+"tant"                  {return WHILE;}
+"faire"                 {return DO;}
+"fintant"               {return ENDWHILE;}
 
-[a-zA-Z]			    {yylval.id = yytext[0]; return identifier;}
-[0-9]+                  {yylval.num = atoi(yytext); return number;}
+"pour"                  {return FOR;}
+"finpour"               {return ENDFOR;}
+
+"fonction"              {return FUNCTION;}
+"retour"                {return RETURN;}
+"fin_fonction"          {return END_FUNCTION;}
+
+"vrai"                  {yylval.num = 1; return TRUE;}
+"faux"                  {yylval.num = 0; return FALSE;}
+
+"et"                    {return AND;}
+"ou"                    {return OR;}
+"non"                   {return NOT;}
+
+"("                     {return OPEN_PAREN;}
+")"                     {return CLOSE_PAREN;}
+"{"                     {return OPEN_BRACE;}
+"}"                     {return CLOSE_BRACE;}
+"["                     {return OPEN_BRACKET;}
+"]"                     {return CLOSE_BRACKET;}
+
+"+"                     {return PLUS;}
+"-"                     {return MINUS;}
+"*"                     {return MULT;}
+"/"                     {return DIV;}
+"%"                     {return MOD;}
+"^"                     {return POW;}
+
+"="                     {return ASSIGN;}
+"=="                    {return EQ;}
+"!="                    {return NE;}
+"<"                     {return LT;}
+">"                     {return GT;}
+"<="                    {return LE;}
+">="                    {return GE;}
+
+";"                     {return SEMICOLON;}
+","                     {return COMMA;}
+":"                     {return COLON;}
+
+[a-zA-Z_][a-zA-Z0-9_]* {yylval.str = strdup(yytext); return IDENTIFIER;}
+[0-9]+                  {yylval.num = atoi(yytext); return NUMBER;}
+[0-9]+\.[0-9]+         {yylval.fnum = atof(yytext); return FLOAT_NUM;}
+
+\"[^\"]*\"              {yylval.str = strdup(yytext + 1); yylval.str[strlen(yylval.str)-1] = '\0'; return STRING;}
+
 [ \t\n]                 ;
-[-+=;]           	    {return yytext[0];}
+#.*                     ;
 .                       {ECHO; yyerror ("unexpected character");}
 %%
 
