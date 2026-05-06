@@ -1,0 +1,13 @@
+programme
+  entier a;
+  entier b;
+  entier c;
+  
+  a = 10;
+  b = 20;
+  c = a + b;
+  
+  ecrire(a);
+  ecrire(b);
+  ecrire(c);
+fin

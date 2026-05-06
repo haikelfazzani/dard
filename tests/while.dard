@@ -1,0 +1,12 @@
+programme
+  entier x;
+  x = 5;
+  
+  tant (x > 0)
+  faire
+  {
+    ecrire(x);
+    x = x - 1;
+  }
+  fintant
+fin

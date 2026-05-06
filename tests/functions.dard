@@ -1,0 +1,13 @@
+programme
+  fonction ajouter(a, b)
+  {
+    entier resultat;
+    resultat = a + b;
+    retour resultat;
+  }
+  fin_fonction
+  
+  entier somme;
+  somme = ajouter(5, 3);
+  ecrire(somme);
+fin
