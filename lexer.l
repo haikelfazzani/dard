@@ -8,7 +8,7 @@ int yylex();
 %}
 
 %%
-"program"               {return PROGRAM;}
+"programme"             {return PROGRAM;}
 "fin"                   {return FIN;}
 "ecrire"                {return WRITE;}
 "lire"                  {return READ;}
@@ -41,6 +41,13 @@ int yylex();
 "et"                    {return AND;}
 "ou"                    {return OR;}
 "non"                   {return NOT;}
+
+"(&)"                   {return BITWISE_AND;}
+"(|)"                   {return BITWISE_OR;}
+"(^)"                   {return BITWISE_XOR;}
+"(~)"                   {return BITWISE_NOT;}
+"(<<)"                  {return LEFT_SHIFT;}
+"(>>)"                  {return RIGHT_SHIFT;}
 
 "("                     {return OPEN_PAREN;}
 ")"                     {return CLOSE_PAREN;}
