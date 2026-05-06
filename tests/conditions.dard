@@ -1,0 +1,16 @@
+programme
+  entier x;
+  entier y;
+  x = 15;
+  y = 10;
+  
+  si (x > y)
+  {
+    ecrire(1);
+  }
+  sinon
+  {
+    ecrire(0);
+  }
+  finsi
+fin
