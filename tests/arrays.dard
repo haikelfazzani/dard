@@ -1,0 +1,10 @@
+programme
+  tableau arr[5];
+  entier i;
+  
+  pour (i = 0; i < 5; i = i + 1)
+  {
+    arr[i] = i * 2;
+  }
+  finpour
+fin
